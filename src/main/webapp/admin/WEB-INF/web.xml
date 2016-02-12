@@ -1,0 +1,46 @@
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+  version="3.0">
+    <servlet>
+        <servlet-name>reservation-servlet</servlet-name>
+        <servlet-class>ReservationServlet</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>ReservationResister</servlet-name>
+        <servlet-class>yeshow.ReservationResister</servlet-class>
+    </servlet>
+<!--
+    <servlet>
+        <servlet-name>DynamicUpdateDataBean</servlet-name>
+        <servlet-class>yeshow.dynamic.update.DynamicUpdateDataBean</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>DynamicUpdateDBBean</servlet-name>
+        <servlet-class>yeshow.dynamic.update.DynamicUpdateDBBean</servlet-class>
+    </servlet>
+-->
+    
+    <servlet-mapping>
+        <servlet-name>ReservationResister</servlet-name>
+        <url-pattern>/ReservationResister</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>reservation-servlet</servlet-name>
+        <url-pattern>/reservation</url-pattern>
+    </servlet-mapping>
+<!--
+    <servlet-mapping>
+        <servlet-name>DynamicUpdateDataBean</servlet-name>
+        <url-pattern>/DynamicUpdateDataBean</url-pattern>
+    </servlet-mapping>
+
+    </servlet-mapping>
+        <servlet-mapping>
+        <servlet-name>DynamicUpdateDBBean</servlet-name>
+        <url-pattern>/DynamicUpdateDBBean</url-pattern>
+    </servlet-mapping>
+-->
+
+</web-app>

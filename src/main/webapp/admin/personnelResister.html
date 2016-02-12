@@ -1,0 +1,92 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+
+	<title>직원등록</title>
+    <!--로그인정보 전역변수js-->
+<script src="./login.js"></script>
+</head>
+
+<body style="margin:10;padding:10">
+<h3>직원등록</h3>
+<form>
+    1. 직원코드 뒷자리<br><input id="server_number" type="text" name="server_number"><br>
+    <font color="red" size="2pt">자신의 가게번호 뒤에 붙을 숫자입니다.<br> ex)가게번호가 10011이고 입력한 숫자가 1일 경우 직원코드는 10011이 부여됩니다.</font><br>
+	2. 이름<br><input id="server_name" type="text" name="server_name" ><br>
+    3. 나이<br><input id="server_age" type="text" name="server_name"><br>
+	4. 핸드폰 번호<br><input id="server_phone" type="text" name="server_phone" ><br>
+	5. 휴무일<br><input id="server_offtime" type="text" name="server_offtime" ><br>
+</form>
+<button ID="server_register">등록</button>
+
+<h3>직원삭제</h3>
+<form>
+	1. 직원코드<br><input id="server_number" type="text" name="server_number" ><br>
+</form>
+<button ID="server_delete">삭제</button>
+<script>
+$('#server_register').click(function(){
+    var login_info=JSON.parse(localStorage.getItem('login_info'))
+    var server_number="";
+    server_number+=login_info.store_number_login;
+    server_number+=$("#server_number").val();
+    alert(server_number);
+    alert(login_info.store_number_login);
+
+
+	var obj={
+        "reqData":{
+            "store_number":login_info.store_number_login,
+            "server_number":server_number,
+            "server_age":$("server_age").val(),
+            "server_name":$("#server_name").val(),
+            "server_offtime":$("#server_offtime").val(),
+            "server_phone":$("#server_phone").val()
+        },
+
+        "reqCode": "SR0001"
+    }
+
+    var json_data = JSON.stringify(obj);
+    $.ajax({
+    	url: 'http://54.250.205.0:8080/springboot2/Server/SignUp',	
+        dataType: "json",
+        type: "post",
+      	contentType: "application/json",
+        data: json_data,
+
+    	success : function(data){
+        	alert("등록되었습니다.");
+      }
+
+    });
+});
+$('#server_delete').click(function(){
+
+	var obj={
+        "reqData":{
+            "server_number":$("#server_number").val()
+        },
+
+        "reqCode": "SR0001"
+    }
+
+    var json_data = JSON.stringify(obj);
+    $.ajax({
+    	url: 'http://54.250.205.0:8080/springboot2/Server/Delete',	
+        dataType: "json",
+        type: "post",
+      	contentType: "application/json",
+        data: json_data,
+
+    	success : function(data){
+        	console.log(data);
+        	alert("삭제되었습니다.");
+      }
+
+    });
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Yeshow 영업관리 솔루션</title>
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/datepicker3.css" rel="stylesheet">
+<link href="css/bootstrap-table.css" rel="stylesheet">
+<link href="css/styles.css" rel="stylesheet">
+
+<!--Icons-->
+<script src="js/lumino.glyphs.js"></script>
+
+<!--[if lt IE 9]>
+<script src="js/html5shiv.js"></script>
+<script src="js/respond.min.js"></script>
+<![endif]-->
+
+</head>
+
+<body>
+	<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#sidebar-collapse">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#"><span>Yeshow</span> 영업관리 솔루션</a>
+				<ul class="user-menu">
+					<li class="dropdown pull-right">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown"><svg class="glyph stroked male-user"><use xlink:href="#stroked-male-user"></use></svg> User <span class="caret"></span></a>
+						<ul class="dropdown-menu" role="menu">
+							<li><a href="#"><svg class="glyph stroked male-user"><use xlink:href="#stroked-male-user"></use></svg> Profile</a></li>
+							<li><a href="#"><svg class="glyph stroked gear"><use xlink:href="#stroked-gear"></use></svg> Settings</a></li>
+							<li><a href="#"><svg class="glyph stroked cancel"><use xlink:href="#stroked-cancel"></use></svg> Logout</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+							
+		</div><!-- /.container-fluid -->
+	</nav>
+		
+	<div id="sidebar-collapse" class="col-sm-3 col-lg-2 sidebar">
+		<form role="search">
+			<div class="form-group">
+				<input type="text" class="form-control" placeholder="Search">
+			</div>
+		</form>
+		<ul class="nav menu">
+			<li><a href="index.html"><svg class="glyph stroked dashboard-dial"><use xlink:href="#stroked-dashboard-dial"></use></svg> 대쉬보드</a></li>
+			<li class="active"><a href="reservation.html"><svg class="glyph stroked calendar"><use xlink:href="#stroked-calendar"></use></svg> 예약관리</a></li>
+			<li><a href="usage.html"><svg class="glyph stroked line-graph"><use xlink:href="#stroked-line-graph"></use></svg> 이용현황</a></li>
+			<li><a href="personnel.html"><svg class="glyph stroked table"><use xlink:href="#stroked-table"></use></svg> 인사관리</a></li>
+			<li><a href="promotion.html"><svg class="glyph stroked pencil"><use xlink:href="#stroked-pencil"></use></svg> 프로모션관리</a></li>
+			<li><a href="panels.html"><svg class="glyph stroked app-window"><use xlink:href="#stroked-app-window"></use></svg> Alerts &amp; Panels</a></li>
+			<li><a href="icons.html"><svg class="glyph stroked star"><use xlink:href="#stroked-star"></use></svg> Yeshow</a></li>
+			<li class="parent ">
+				<a href="#">
+					<span data-toggle="collapse" href="#sub-item-1"><svg class="glyph stroked chevron-down"><use xlink:href="#stroked-chevron-down"></use></svg></span> Dropdown 
+				</a>
+				<ul class="children collapse" id="sub-item-1">
+					<li>
+						<a class="" href="#">
+							<svg class="glyph stroked chevron-right"><use xlink:href="#stroked-chevron-right"></use></svg> Sub Item 1
+						</a>
+					</li>
+					<li>
+						<a class="" href="#">
+							<svg class="glyph stroked chevron-right"><use xlink:href="#stroked-chevron-right"></use></svg> Sub Item 2
+						</a>
+					</li>
+					<li>
+						<a class="" href="#">
+							<svg class="glyph stroked chevron-right"><use xlink:href="#stroked-chevron-right"></use></svg> Sub Item 3
+						</a>
+					</li>
+				</ul>
+			</li>
+			<li role="presentation" class="divider"></li>
+			<li><a href="login.html"><svg class="glyph stroked male-user"><use xlink:href="#stroked-male-user"></use></svg> Login Page</a></li>
+		</ul>
+		
+	</div><!--/.sidebar-->
+		
+	<div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">		
+		<div class="row">
+			<ol class="breadcrumb">
+				<li><a href="#"><svg class="glyph stroked home"><use xlink:href="#stroked-home"></use></svg></a></li>
+				<li class="active">Yeshow</li>
+			</ol>
+		</div><!--/.row-->
+		
+		<div class="row">
+			<div class="col-lg-12">
+			<h1 class="page-header">예약관리</h1>
+			</div>
+		</div><!--/.row-->
+		
+		<div class="row">
+			<div class="col-xs-12 col-md-6 col-lg-3">
+				<div class="panel panel-blue panel-widget ">
+					<div class="row no-padding">
+						<div class="col-sm-3 col-lg-5 widget-left">
+							<svg class="glyph stroked bag"><use xlink:href="#stroked-bag"></use></svg>
+						</div>
+						<div class="col-sm-9 col-lg-7 widget-right">
+							<div class="large">120</div>
+							<div class="text-muted">예약건수</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="col-xs-12 col-md-6 col-lg-3">
+				<div class="panel panel-teal panel-widget">
+					<div class="row no-padding">
+						<div class="col-sm-3 col-lg-5 widget-left">
+							<svg class="glyph stroked male-user"><use xlink:href="#stroked-male-user"></use></svg>
+						</div>
+						<div class="col-sm-9 col-lg-7 widget-right">
+							<div class="large">24</div>
+								<div class="text-muted">좋아요</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-xs-12 col-md-6 col-lg-3">
+				<div class="panel panel-orange panel-widget">
+					<div class="row no-padding">
+						<div class="col-sm-3 col-lg-5 widget-left">
+							<svg class="glyph stroked empty-message"><use xlink:href="#stroked-empty-message"></use></svg>
+						</div>
+						<div class="col-sm-9 col-lg-7 widget-right">
+							<div class="large">52</div>
+							<div class="text-muted">리뷰</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-xs-12 col-md-6 col-lg-3">
+				<div class="panel panel-red panel-widget">
+					<div class="row no-padding">
+						<div class="col-sm-3 col-lg-5 widget-left">
+							<svg class="glyph stroked app-window-with-content"><use xlink:href="#stroked-app-window-with-content"></use></svg>
+						</div>
+						<div class="col-sm-9 col-lg-7 widget-right">
+							<div class="large">25.2k</div>
+							<div class="text-muted">이번달 방문고객</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div><!--/.row-->
+	
+		<div class="row">
+			<!--달력 및  To Do 구획-->
+			<div class="col-md-3">
+			
+				<div class="panel panel-red">
+					<div class="panel-heading dark-overlay"><svg class="glyph stroked calendar"><use xlink:href="#stroked-calendar"></use></svg>예약관리</div>
+					<div class="panel-body">
+						<div id="calendar"></div>
+					</div>
+				</div>
+				
+				<div class="panel panel-blue">
+					<div class="panel-heading dark-overlay"><svg class="glyph stroked clipboard-with-paper"><use xlink:href="#stroked-clipboard-with-paper"></use></svg>프로모션 내역</div>
+					<div class="panel-body">
+						<ul class="todo-list">
+						<li class="todo-list-item">
+								<div class="checkbox">
+									<input type="checkbox" id="checkbox" />
+									<label for="checkbox">첫손님 반값 할인</label>
+								</div>
+								<div class="pull-right action-buttons">
+									<a href="#"><svg class="glyph stroked pencil"><use xlink:href="#stroked-pencil"></use></svg></a>
+									<a href="#" class="flag"><svg class="glyph stroked flag"><use xlink:href="#stroked-flag"></use></svg></a>
+									<a href="#" class="trash"><svg class="glyph stroked trash"><use xlink:href="#stroked-trash"></use></svg></a>
+								</div>
+							</li>
+							<li class="todo-list-item">
+								<div class="checkbox">
+									<input type="checkbox" id="checkbox" />
+									<label for="checkbox">3시~5시 30%할인</label>
+								</div>
+								<div class="pull-right action-buttons">
+									<a href="#"><svg class="glyph stroked pencil"><use xlink:href="#stroked-pencil"></use></svg></a>
+									<a href="#" class="flag"><svg class="glyph stroked flag"><use xlink:href="#stroked-flag"></use></svg></a>
+									<a href="#" class="trash"><svg class="glyph stroked trash"><use xlink:href="#stroked-trash"></use></svg></a>
+								</div>
+							</li>
+							<li class="todo-list-item">
+								<div class="checkbox">
+									<input type="checkbox" id="checkbox" />
+									<label for="checkbox">오픈타임 파마30% 할인</label>
+								</div>
+								<div class="pull-right action-buttons">
+									<a href="#"><svg class="glyph stroked pencil"><use xlink:href="#stroked-pencil"></use></svg></a>
+									<a href="#" class="flag"><svg class="glyph stroked flag"><use xlink:href="#stroked-flag"></use></svg></a>
+									<a href="#" class="trash"><svg class="glyph stroked trash"><use xlink:href="#stroked-trash"></use></svg></a>
+								</div>
+							</li>
+							
+						</ul>
+					</div>
+					<div class="panel-footer">
+						<div class="input-group">
+							<input id="btn-input" type="text" class="form-control input-md" placeholder="Add new task" />
+							<span class="input-group-btn">
+								<button class="btn btn-primary btn-md" id="btn-todo">Add</button>
+							</span>
+						</div>
+					</div>
+				</div>
+
+				<!--예약취소-->
+				<div class="panel panel-default">
+					<div class="panel-heading"><svg class="glyph stroked email"><use xlink:href="#stroked-email"></use></svg> 예약 취소</div>
+					<div class="panel-body">
+						<form class="form-horizontal" action="" method="post">
+							<fieldset>
+								<!-- Name input-->
+								<div class="form-group">
+									<label class="col-md-5 control-label" for="name">고객이름</label>
+									<div class="col-md-7">
+									<input id="name" name="name" type="text" placeholder="이름" class="form-control">
+									</div>
+								</div>
+
+								<!-- phone input-->
+								<div class="form-group">
+									<label class="col-md-5 control-label" for="name">핸드폰번호</label>
+									<div class="col-md-7">
+									<input id="name" name="name" type="text" placeholder="핸드폰번호" class="form-control">
+									</div>
+								</div>
+							
+								<!-- 날짜 input-->
+								<div class="form-group">
+									<label class="col-md-5 control-label" for="email">날짜</label>
+									<div class="col-md-7">
+										<input id="email" name="email" type="text" placeholder="날짜" class="form-control">
+									</div>
+								</div>
+
+														
+								<!-- Form actions -->
+								<div class="form-group">
+									<div class="col-md-12 widget-right">
+										<button type="submit" class="btn btn-default btn-md pull-right">예약취소</button>
+									</div>
+								</div>
+							</fieldset>
+						</form>
+					</div>
+				</div>
+								
+			</div><!--/.col-->
+			<!--시간관리 구획-->
+			<div class="col-md-9">
+				<div class="panel panel-default">
+					<div class="panel-heading">2015년 몇월 몇일의 타임테이블</div>
+					<div class="panel-body">
+						
+						<table data-toggle="table" data-url="tables/data2.json" >
+							<script>
+						$.get('data2.json', function(data) {
+    					$('#table').bootstrapTable({
+        						data: data
+					    	});
+						});
+						</script>
+						    <thead>
+						    <tr>
+						        <th data-field="reservation_time" data-align="right">시간</th>
+						        <th data-field="server_name" data-align="center">담당자</th>
+						        <th data-field="user_name" data-align="center">고객</th>
+						        <th data-field="reservation_etc" data-align="center">비고</th>
+						    </tr>
+						    </thead>
+						</table>
+						
+					</div>
+				</div>
+
+				<!--예약접수 구획-->
+				<div class="panel panel-default">
+					<div class="panel-heading"><svg class="glyph stroked email"><use xlink:href="#stroked-email"></use></svg> 예약/현장 접수</div>
+					<div class="panel-body">
+						<form class="form-horizontal" action="/yeshow/ReservationResister.jsp" method="post">
+							<fieldset>
+								<!-- Name input-->
+								<div class="form-group">
+									<label class="col-md-2 control-label" for="name">고객이름</label>
+									<div class="col-md-9">
+									<input id="name" name="user_name" type="text" placeholder="이름을 입력해 주세요." class="form-control">
+									</div>
+								</div>
+
+								<!-- phone input-->
+								<div class="form-group">
+									<label class="col-md-2 control-label" for="name">핸드폰번호</label>
+									<div class="col-md-9">
+									<input id="name" name="user_phone" type="text" placeholder="핸드폰번호를 입력해 주세요." class="form-control">
+									</div>
+								</div>
+							
+								<!-- 날짜 input-->
+								<div class="form-group">
+									<label class="col-md-2 control-label" for="email">날짜</label>
+									<div class="col-md-9">
+										<input id="email" name="reservation_date" type="text" placeholder="날짜를 입력해 주세요" class="form-control">
+									</div>
+								</div>
+
+								<!-- 시간 input-->
+								<div class="form-group">
+									<label class="col-md-2 control-label" for="email">시간</label>
+									<div class="col-md-9">
+										<input id="email" name="reservation_time" type="text" placeholder="시간을 입력해 주세요" class="form-control">
+									</div>
+								</div>
+
+								<!-- 디자이너 input-->
+								<div class="form-group">
+									<label class="col-md-2 control-label" for="email">담당자</label>
+									<div class="col-md-9">
+										<input id="email" name="server_name" type="text" placeholder="담당자 이름" class="form-control">
+									</div>
+								</div>
+								
+								<!-- Message body -->
+								<div class="form-group">
+									<label class="col-md-2 control-label" for="message">서비스 내용</label>
+									<div class="col-md-9">
+										<textarea class="form-control" id="message" name="reservation_etc" placeholder="서비스 내용" cols="50" rows="4"></textarea>
+									</div>
+								</div>
+								
+								<!-- Form actions -->
+								<div class="form-group">
+									<div class="col-md-12 widget-right">
+										<button type="submit" class="btn btn-default btn-md pull-right">접수</button>
+									</div>
+								</div>
+							</fieldset>
+						</form>
+					</div>
+				</div>
+			</div>
+
+			
+		</div><!--/.row-->
+	</div>	<!--/.main-->
+		  
+
+	<script src="js/jquery-1.11.1.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/chart.min.js"></script>
+	<script src="js/chart-data.js"></script>
+	<script src="js/easypiechart.js"></script>
+	<script src="js/easypiechart-data.js"></script>
+	<script src="js/bootstrap-datepicker.js"></script>
+	<script src="js/bootstrap-table.js"></script>
+	<script>
+		$('#calendar').datepicker({
+		});
+
+		!function ($) {
+		    $(document).on("click","ul.nav li.parent > a > span.icon", function(){          
+		        $(this).find('em:first').toggleClass("glyphicon-minus");      
+		    }); 
+		    $(".sidebar span.icon").find('em:first').addClass("glyphicon-plus");
+		}(window.jQuery);
+
+		$(window).on('resize', function () {
+		  if ($(window).width() > 768) $('#sidebar-collapse').collapse('show')
+		})
+		$(window).on('resize', function () {
+		  if ($(window).width() <= 767) $('#sidebar-collapse').collapse('hide')
+		})
+	</script>	
+</body>
+
+</html>
