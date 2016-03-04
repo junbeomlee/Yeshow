@@ -26,9 +26,6 @@ public class User {
 	@Column(name="user_freq")
 	private int user_freq;
 	
-	@Column(name="age")
-	private int age;
-	
 	@Column(name="grade")
 	private String grade;
 	
@@ -40,7 +37,7 @@ public class User {
 
 	public User(){}
 
-	public User(long tokenID, String user_name, String user_phone, String gender, int user_freq, int age, String grade,
+	public User(long tokenID, String user_name, String user_phone, String gender, int user_freq,String grade,
 			int point, String role) {
 		super();
 		this.tokenID = tokenID;
@@ -48,7 +45,6 @@ public class User {
 		this.user_phone = user_phone;
 		this.gender = gender;
 		this.user_freq = user_freq;
-		this.age = age;
 		this.grade = grade;
 		this.point = point;
 		this.role = role;
@@ -103,17 +99,6 @@ public class User {
 	public void setUser_freq(int user_freq) {
 		this.user_freq = user_freq;
 	}
-
-
-	public int getAge() {
-		return age;
-	}
-
-
-	public void setAge(int age) {
-		this.age = age;
-	}
-
 
 	public String getGrade() {
 		return grade;

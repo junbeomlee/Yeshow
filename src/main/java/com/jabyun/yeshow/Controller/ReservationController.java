@@ -37,6 +37,11 @@ public class ReservationController extends YeshowController{
 	@Qualifier("ReservationCompleteService")
 	private YeshowService ReservationCompleteService;
 	
+	
+	@Autowired
+	@Qualifier("ReservationGetInfo")
+	private YeshowService ReservationGetInfo;
+	
 	@RequestMapping(value = "/Reservation/Insert",  produces="application/json; charset=utf8")
 	public @ResponseBody Map<String,Object> ReservationInsert(@RequestBody JSONObject requestData, HttpSession session){
 		
@@ -47,7 +52,17 @@ public class ReservationController extends YeshowController{
 		 * 	 reqData:{
 		 * 		store_number:"@",
 		 * 		tokenID:"@",
-		 * 		server_number:"@"
+		 * 		server_number:"@",
+		 * 		reservation_etc:"@"
+		 * 		date:{
+	         year:"@"
+	         month:"@"
+	         day:"@"
+	      }
+	      time:{
+	         hour:"@"
+	         min:"@"
+	      }
 		 * 	 },
 		 *   reqCode:"RV0001" 
 		 * }
@@ -170,6 +185,34 @@ public class ReservationController extends YeshowController{
 		 *		Reservation:[]
 		 *	]
 		 * 	resCode:"RV0005" 
+		 * }
+		 */
+	}
+	
+	@RequestMapping(value = "/Reservation/GetInfo",  produces="application/json; charset=utf8")
+	public @ResponseBody Map<String,Object> ReservationGetInfo(@RequestBody JSONObject requestData, HttpSession session){
+		
+		
+		/*
+		 * requestData format Store GetList: reqCode=RV0006
+		 * { 
+		 * 	 reqData:{
+		 * 		reservation_number:"@",
+		 * 	 },
+		 *   reqCode:"RV0006" 
+		 * }
+		 */
+		return this.execute(requestData, ReservationGetInfo, "RV0006");
+		
+		/**
+		 * responseData format Store GetList: resCode=RV0006
+		 * { 
+		 * 	resData:[
+		 *		Reservation:[]
+		 *		Reservation:[]
+		 *			...
+		 *	]
+		 * 	resCode:"RV0006" 
 		 * }
 		 */
 	}

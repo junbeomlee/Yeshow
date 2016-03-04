@@ -34,13 +34,18 @@ public class Store {
 	
 	@Column(name="role")
 	private String role;
+	
+	@Column(name="store_image")
+	private String store_image;
 
+	@Column(name="image")
+	private String image;
+	
+	
 	public Store(){}
-	
-	
 
 	public Store(long store_number, String store_name, String kind, String district, String store_password,
-			Promotion promotion, StoreDetail storeDetail, String role) {
+			Promotion promotion, StoreDetail storeDetail, String role, String store_image, String image) {
 		super();
 		this.store_number = store_number;
 		this.store_name = store_name;
@@ -50,74 +55,111 @@ public class Store {
 		this.promotion = promotion;
 		this.storeDetail = storeDetail;
 		this.role = role;
+		this.store_image = store_image;
+		this.image = image;
 	}
-
 
 
 	public long getStore_number() {
 		return store_number;
 	}
 
+
 	public void setStore_number(long store_number) {
 		this.store_number = store_number;
 	}
+
 
 	public String getStore_name() {
 		return store_name;
 	}
 
+
 	public void setStore_name(String store_name) {
 		this.store_name = store_name;
 	}
+
 
 	public String getKind() {
 		return kind;
 	}
 
+
 	public void setKind(String kind) {
 		this.kind = kind;
 	}
+
 
 	public String getDistrict() {
 		return district;
 	}
 
+
 	public void setDistrict(String district) {
 		this.district = district;
 	}
+
 
 	public String getStore_password() {
 		return store_password;
 	}
 
+
 	public void setStore_password(String store_password) {
 		this.store_password = store_password;
 	}
+
 
 	public Promotion getPromotion() {
 		return promotion;
 	}
 
+
 	public void setPromotion(Promotion promotion) {
 		this.promotion = promotion;
 	}
+
 
 	public StoreDetail getStoreDetail() {
 		return storeDetail;
 	}
 
+
 	public void setStoreDetail(StoreDetail storeDetail) {
 		this.storeDetail = storeDetail;
 	}
+
 
 	public String getRole() {
 		return role;
 	}
 
+
 	public void setRole(String role) {
 		this.role = role;
 	}
-	
+
+
+	public String getStore_image() {
+		return store_image;
+	}
+
+
+	public void setStore_image(String store_image) {
+		this.store_image = store_image;
+	}
+
+
+	public String getImage() {
+		return image;
+	}
+
+
+	public void setImage(String image) {
+		this.image = image;
+	}
+
+
 	
 }
 	

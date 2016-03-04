@@ -10,7 +10,7 @@ function server_show(){
 
     var json_data = JSON.stringify(obj);
     $.ajax({
-        url: 'http://54.250.205.0:8080/springboot2/Server/GetList',  
+        url: baseURL+'/Server/GetList',  
         dataType: "json",
         type: "post",
         contentType: "application/json",
@@ -78,7 +78,7 @@ function server_select(number){
 
     var json_data = JSON.stringify(obj);
     $.ajax({
-        url: 'http://54.250.205.0:8080/springboot2/Server/GetInfo',  
+        url: baseURL+'/Server/GetInfo',  
         dataType: "json",
         type: "post",
         contentType: "application/json",
@@ -158,7 +158,7 @@ $('#server_delete').click(function(){
 
     var json_data = JSON.stringify(obj);
     $.ajax({
-    	url: 'http://54.250.205.0:8080/springboot2/Server/Delete',	
+    	url: baseURL+'/Server/Delete',	
         dataType: "json",
         type: "post",
       	contentType: "application/json",

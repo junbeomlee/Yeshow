@@ -63,9 +63,9 @@ public class ReservationInsertService extends YeshowService {
 		JSONObject reservationDate=(JSONObject) dataObject.get("date");
 		JSONObject reservationTime=(JSONObject) dataObject.get("time");
 		Reservation reservation=new Reservation();
-		Time time = new Time(Integer.parseInt((String) reservationTime.get("hour")), Integer.parseInt((String)reservationTime.get("time")), 0);
+		Time time = new Time(Integer.parseInt((String) reservationTime.get("hour")), Integer.parseInt((String)reservationTime.get("min")), 0);
 		Date date= new Date(Calender.getDate(Integer.parseInt((String) reservationDate.get("year")), Integer.parseInt((String) reservationDate.get("month")), Integer.parseInt((String) reservationDate.get("day"))));
-		reservation=reservation.makeReservation(user, store, server,date,time);
+		reservation=reservation.makeReservation(user, store, server,date,time,(String)dataObject.get("reservation_etc"));
 		
 		reservationRepository.save(reservation);
 		listFinalData.add(reservation);

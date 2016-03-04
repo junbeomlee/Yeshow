@@ -14,6 +14,8 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 import com.jabyun.yeshow.Domain.Store;
+import com.jabyun.yeshow.Domain.StoreDefaultImage;
+import com.jabyun.yeshow.Repository.StoreImageRepository;
 import com.jabyun.yeshow.Repository.StoreRepository;
 
 @Component("StoreGetListService")
@@ -21,6 +23,9 @@ public class StoreGetListService extends YeshowService{
 	
 	@Autowired
 	private StoreRepository storeRepository;
+	
+	@Autowired
+	private StoreImageRepository storeImageRepository;
 
 
 	@SuppressWarnings("unchecked")
@@ -30,12 +35,15 @@ public class StoreGetListService extends YeshowService{
 		// TODO Auto-generated method stub
 		ArrayList<Object> listFinalData = new ArrayList<Object>();
 		//List<Object> store=this.storeRepository.findAllStoreAndImage();
-		List<Store> store=this.storeRepository.findAll();
-	
-		for (int i=0; i<store.size();i++) {
+		List<Store> storeList=this.storeRepository.findAll();
+		
+		for (int i=0; i<storeList.size();i++) {
 
-			Store temp=store.get(i);
-			listFinalData.add(temp);
+			Store store=storeList.get(i);
+			String storeImage=StoreDefaultImage.getImage(store.getStore_image());
+			store.setImage(storeImage);
+			//store.setStore_image(storeImage);
+			listFinalData.add(store);
         }
 		
 		return listFinalData;

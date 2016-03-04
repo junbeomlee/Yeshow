@@ -117,13 +117,14 @@ public class Reservation {
 		this.reservation_time = reservation_time;
 	}
 	
-	public Reservation makeReservation(User user,Store store,Server server, Date date, Time time){
+	public Reservation makeReservation(User user,Store store,Server server, Date date, Time time, String reservation_etc){
 		
 		this.user=user;
 		this.store=store;
 		this.server=server;
 		this.reservation_date = date;
 		this.reservation_time = time;
+		this.reservation_etc = reservation_etc;
 		
 		return this;
 	}

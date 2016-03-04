@@ -12,10 +12,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.jabyun.yeshow.Service.FavoriteInsertService;
 import com.jabyun.yeshow.Service.YeshowService;
 
-@Controller
+
 public class FavoriteController extends YeshowController {
 	
 	@Autowired

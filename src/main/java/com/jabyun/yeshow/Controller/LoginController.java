@@ -1,10 +1,13 @@
 package com.jabyun.yeshow.Controller;
 
+import java.nio.file.Paths;
 import java.util.Map;
 
 import javax.servlet.http.HttpSession;
 
 import org.json.simple.JSONObject;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,11 +16,12 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 public class LoginController extends YeshowController {
 	
+	private final Logger logger = LoggerFactory.getLogger(getClass());
 	
 	@RequestMapping(value = "/api/login")
-	public String apiLogin() {
+	public @ResponseBody String apiLogin() {
 		
-		return "index";
+		return Paths.get("").toAbsolutePath().toString();
 		
 	}
 	

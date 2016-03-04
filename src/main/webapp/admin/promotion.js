@@ -13,7 +13,7 @@ function promotionShow(){
 
     var json_data = JSON.stringify(obj);
     $.ajax({
-        url: 'http://54.250.205.0:8080/springboot2/Store/GetInfo',  
+        url: baseURL+'/Store/GetInfo',  
         dataType: "json",
         type: "post",
         contentType: "application/json",
@@ -64,7 +64,7 @@ function promotionResister(){
 
     var json_data = JSON.stringify(obj);
     $.ajax({
-        url: 'http://54.250.205.0:8080/springboot2/Store/PromotionAdd',  
+        url: baseURL+'/Store/PromotionAdd',  
         dataType: "json",
         type: "post",
         contentType: "application/json",

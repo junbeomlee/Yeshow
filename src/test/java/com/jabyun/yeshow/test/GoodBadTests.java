@@ -1,5 +1,8 @@
 package com.jabyun.yeshow.test;
 
+import java.sql.SQLException;
+
+import org.json.simple.JSONObject;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -18,6 +21,7 @@ import com.jabyun.yeshow.Repository.BadRepository;
 import com.jabyun.yeshow.Repository.GoodRepository;
 import com.jabyun.yeshow.Repository.StoreRepository;
 import com.jabyun.yeshow.Repository.UserRepository;
+import com.jabyun.yeshow.Service.StoreGetListService;
 import com.jabyun.yeshow.test.factory.GoodFactory;
 import com.jabyun.yeshow.test.factory.StoreFactory;
 import com.jabyun.yeshow.test.factory.UserFactory;
@@ -42,6 +46,8 @@ public class GoodBadTests implements InstanceTestClassListener{
 	@Autowired private StoreFactory storeFactory;
 	@Autowired private UserFactory userFactory;
 	@Autowired private ObserverCollector observerCollector;
+	
+	@Autowired private StoreGetListService storeGetListService;
 	
 	
 	@Override
@@ -72,9 +78,20 @@ public class GoodBadTests implements InstanceTestClassListener{
 		Assert.assertSame(expectedGood.getGood_number(),actualGood.getGood_number());
 	}
 	
+	@SuppressWarnings("unchecked")
 	@Test
 	public void BadAddTest(){
-		
+		JSONObject dataObject= new JSONObject();
+		dataObject.put("reqCode", "ST0001");
+		JSONObject reqData = new JSONObject();
+		reqData.put("store_number", "10011");
+		dataObject.put("reqData",reqData);
+		try {
+			storeGetListService.execute(dataObject);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 }

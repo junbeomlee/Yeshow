@@ -12,14 +12,13 @@ function getGoodNum() {
 
     var json_data = JSON.stringify(obj);
     $.ajax({
-        url: 'http://54.250.205.0:8080/springboot2/GoodBad/GetGoodNum',  
+        url: baseURL+'/GoodBad/GetGoodNum',  
         dataType: "json",
         type: "post",
         contentType: "application/json",
         data: json_data,
 
         success : function(data){
-            console.log(data.resData.length);
             $("#good_num").html(data.resData.length);
       }
     });
@@ -40,7 +39,7 @@ function getComment(){
 
     var json_data = JSON.stringify(obj);
     $.ajax({
-        url: 'http://54.250.205.0:8080/springboot2/Comment/GetList/Store',  
+        url: baseURL+'/Comment/GetList/Store',  
         dataType: "json",
         type: "post",
         contentType: "application/json",
@@ -84,7 +83,7 @@ function getThisMonthNum(){
 
     var json_data = JSON.stringify(obj);
     $.ajax({
-        url: 'http://54.250.205.0:8080/springboot2/History/GetListByThisMonth',  
+        url: baseURL+'/History/GetListByThisMonth',  
         dataType: "json",
         type: "post",
         contentType: "application/json",
@@ -117,7 +116,7 @@ function getReservation(){
 
     var json_data = JSON.stringify(obj);
     $.ajax({
-        url: 'http://54.250.205.0:8080/springboot2/Reservation/GetList/Store',  
+        url: baseURL+'/Reservation/GetList/Store',  
         dataType: "json",
         type: "post",
         contentType: "application/json",

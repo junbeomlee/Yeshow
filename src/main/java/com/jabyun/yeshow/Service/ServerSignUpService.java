@@ -50,8 +50,8 @@ public class ServerSignUpService extends YeshowService{
 			String server_name = (String) dataObject.get("server_name");
 			String server_phone = (String) dataObject.get("server_phone");
 			String server_offtime = (String) dataObject.get("server_offtime");
-			int server_age = (int) dataObject.get("server_age");
-			Server server = new Server(StringToLong.convert(server_number),store,server_name,server_offtime,server_phone,"",server_age);
+			String server_age = (String) dataObject.get("server_age");
+			Server server = new Server(StringToLong.convert(server_number),store,server_name,server_offtime,server_phone,"",Integer.valueOf(server_age));
 			server=this.serverRepository.save(server);
 			listFinalData.add(server);
 		}else{

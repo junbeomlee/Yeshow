@@ -4,6 +4,8 @@
 	<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
 
 	<title>직원등록</title>
+    <!--baseURL-->
+<script src="./baseURL"></script>
     <!--로그인정보 전역변수js-->
 <script src="./login.js"></script>
 </head>
@@ -50,7 +52,7 @@ $('#server_register').click(function(){
 
     var json_data = JSON.stringify(obj);
     $.ajax({
-    	url: 'http://54.250.205.0:8080/springboot2/Server/SignUp',	
+    	url: baseURL+'/Server/SignUp',	
         dataType: "json",
         type: "post",
       	contentType: "application/json",
@@ -74,7 +76,7 @@ $('#server_delete').click(function(){
 
     var json_data = JSON.stringify(obj);
     $.ajax({
-    	url: 'http://54.250.205.0:8080/springboot2/Server/Delete',	
+    	url: baseURL+'/Server/Delete',	
         dataType: "json",
         type: "post",
       	contentType: "application/json",

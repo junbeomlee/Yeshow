@@ -9,7 +9,7 @@ import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
-@Configuration
+/*@Configuration
 @EnableWebMvc
 public class MvcConfig extends WebMvcConfigurerAdapter{
 	
@@ -20,7 +20,6 @@ public class MvcConfig extends WebMvcConfigurerAdapter{
         resolver.setSuffix(".jsp");
         return resolver;
     }
-	
 	@Override
     public void configureDefaultServletHandling(
             DefaultServletHandlerConfigurer configurer) {
@@ -32,4 +31,4 @@ public class MvcConfig extends WebMvcConfigurerAdapter{
         registry.addResourceHandler("/resource/**").addResourceLocations("WEB-INF/resources/");
     }
     
-}
+}*/

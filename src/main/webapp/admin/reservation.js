@@ -21,7 +21,7 @@ function datepic(){
 		}
 		var json_data=JSON.stringify(obj);
 		$.ajax({
-	        url: 'http://54.250.205.0:8080/springboot2/Reservation/GetList/Store',  
+	        url: baseURL+'/Reservation/GetList/Store',  
 	        dataType: "json",
 	        type: "post",
 	        contentType: "application/json",
@@ -112,7 +112,7 @@ function reservationRegister(){
 	 var json_data=JSON.stringify(obj);
 
 	 $.ajax({
-    	url: 'http://54.250.205.0:8080/springboot2/Server/SignUp',	
+    	url: baseURL+'/Server/SignUp',	
         dataType: "json",
         type: "post",
       	contentType: "application/json",
@@ -138,7 +138,7 @@ function reservation_delete(number){
 	var json_data=JSON.stringify(obj);
 
 	$.ajax({
-	    url: 'http://54.250.205.0:8080/springboot2/Reservation/Delete',  
+	    url: baseURL+'/Reservation/Delete',  
     	dataType: "json",
         type: "post",
         contentType: "application/json",
@@ -166,7 +166,7 @@ function reservation_complete(number){
 	console.log(json_data);
 
 	$.ajax({
-	    url: 'http://54.250.205.0:8080/springboot2/Reservation/Complete',  
+	    url: baseURL+'/Reservation/Complete',  
     	dataType: "json",
         type: "post",
         contentType: "application/json",

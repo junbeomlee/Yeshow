@@ -17,7 +17,7 @@ function getHistoryByMonth(month,year){
     var json_data = JSON.stringify(obj);
 
     $.ajax({
-        url: 'http://54.250.205.0:8080/springboot2/History/GetListByMonth',  
+        url: baseURL+'/History/GetListByMonth',  
         dataType: "json",
         type: "post",
         contentType: "application/json",
@@ -44,7 +44,7 @@ function Query(query){
     var json_data = JSON.stringify(obj);
 
     $.ajax({
-        url: 'http://54.250.205.0:8080/springboot2/History/Search',  
+        url: baseURL+'/History/Search',  
         dataType: "json",
         type: "post",
         contentType: "application/json",
@@ -52,7 +52,6 @@ function Query(query){
         async:false,
         success : function (data){
         	query_number=data.resData.length;
-        	console.log(data.resData);
         }
     });
     return query_number;
