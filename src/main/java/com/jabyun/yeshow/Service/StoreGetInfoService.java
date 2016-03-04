@@ -7,14 +7,10 @@ import org.json.simple.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import com.jabyun.yeshow.Domain.Promotion;
 import com.jabyun.yeshow.Domain.Store;
 import com.jabyun.yeshow.Repository.StoreRepository;
 import com.jabyun.yeshow.Util.DuplicateException;
 import com.jabyun.yeshow.Util.StringToLong;
-import com.jabyun.yeshow.test.factory.StoreFactory;
-
-import junit.framework.Assert;
 
 @Component("StoreGetInfoService")
 public class StoreGetInfoService extends YeshowService{

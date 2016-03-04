@@ -12,9 +12,6 @@ import com.jabyun.yeshow.Domain.Store;
 import com.jabyun.yeshow.Repository.StoreRepository;
 import com.jabyun.yeshow.Util.DuplicateException;
 import com.jabyun.yeshow.Util.StringToLong;
-import com.jabyun.yeshow.test.factory.StoreFactory;
-
-import junit.framework.Assert;
 
 @Component("StorePromotionAddService")
 public class StorePromotionAddService extends YeshowService{
