@@ -128,6 +128,7 @@
 				spring-boot-starter-data-elasticsearch
 			</artifactId>
 		</dependency>
+		
 		<dependency>
 			<groupId>org.openid4java</groupId>
 			<artifactId>openid4java-nodeps</artifactId>
@@ -163,6 +164,15 @@
 					</execution>
 				</executions>
 			</plugin>
+			<plugin>
+      <groupId>org.apache.maven.plugins</groupId>
+      <artifactId>maven-compiler-plugin</artifactId>
+      <configuration>
+        <compilerVersion>1.5</compilerVersion>
+        <source>1.5</source>
+        <target>1.5</target>
+      </configuration>
+    </plugin>
 		</plugins>
 	</build>
 
