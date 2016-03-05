@@ -81,7 +81,7 @@ public class GoodBadTests implements InstanceTestClassListener{
 	@SuppressWarnings("unchecked")
 	@Test
 	public void BadAddTest(){
-		//Assert.fail();
+		Assert.fail();
 		/*JSONObject dataObject= new JSONObject();
 		dataObject.put("reqCode", "ST0001");
 		JSONObject reqData = new JSONObject();
