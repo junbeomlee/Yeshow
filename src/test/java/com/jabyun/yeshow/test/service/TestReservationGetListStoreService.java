@@ -43,7 +43,7 @@ public class TestReservationGetListStoreService implements InstanceTestClassList
 	
 	@Test
 	public void reservationGetListStoreService(){
-		/*
+		
 		JSONObject dataObject= new JSONObject();
 		dataObject.put("year", "2016");
 		dataObject.put("month", "1");
@@ -60,7 +60,7 @@ public class TestReservationGetListStoreService implements InstanceTestClassList
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		Assert.assertEquals(2, listFinalData.size());*/
+		Assert.assertEquals(2, listFinalData.size());
 	}
 
 	
