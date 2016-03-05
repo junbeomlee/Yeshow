@@ -20,7 +20,7 @@ public class LoginController extends YeshowController {
 	
 	@RequestMapping(value = "/api/login")
 	public @ResponseBody String apiLogin() {
-		
+		int a=0;
 		return Paths.get("").toAbsolutePath().toString();
 		
 	}
